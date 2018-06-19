@@ -21,7 +21,7 @@ puts "Here are the days: #{days}"
 # This line prints a string with an interpolated variable and then prints a new line
 puts "Here are the months: #{months}"
 
-# This line prints a string with the quote format, and then a new line
+# This line prints a string with the %q string literal (single quote formatting), and then a new line
 puts %q{
 There's something going on here.
 With this weird quote
