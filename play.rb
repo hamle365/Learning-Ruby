@@ -21,13 +21,13 @@ comment = gets
 puts " - - - - - - -
 " * 5
 
-puts "Arthur is now very old."
+puts "Arthur is now very old. How old is he now?"
 
-arthur_age_old = 192
+arthur_age_old = gets.chomp.to_i
 
 puts "Arthur is so old that he is #{arthur_age_old} years old."
 
-puts "I'll tell you what 12 percent of Arthur's age is"
+puts "I'll tell you what 12 percent of Arthur's age is. What do you think?"
 
 gets
 
