@@ -51,24 +51,36 @@ friday_profit = friday_revenue - friday_expenses
 saturday_profit = saturday_revenue - saturday_expenses
 sunday_profit = sunday_revenue - sunday_expenses
 
+total_revenue = monday_revenue + tuesday_revenue + wednesday_revenue + thursday_revenue + friday_revenue + saturday_revenue + sunday_revenue
+
+total_expenses = monday_expenses + tuesday_expenses + wednesday_expenses + thursday_expenses + friday_expenses + saturday_expenses + sunday_expenses
+
+total_profit = total_revenue - total_expenses
+
+avg_revenue = "$ %.2f" % (total_revenue/7)
+
+avg_expenses = "$ %.2f" % (total_expenses/7)
+
+avg_profit = "$ %.2f" % (total_profit/7)
+
+monday_revenue = "%.2f" % monday_revenue
 
 table = """
 |==========| ==========  |======== |========|
 |=day======| ===revenue= |expenses |=profit=|
 
-|monday    | #{monday_revenue} | #{monday_expenses} | #{monday_profit}
-|tuesday   | #{tuesday_revenue} | #{tuesday_expenses} | #{tuesday_profit}
-|wednesday | #{wednesday_revenue} | #{wednesday_expenses} | #{wednesday_profit}
-|thursday  | #{thursday_revenue}  | #{thursday_expenses} | #{thursday_profit}
-|friday    | #{friday_revenue}  | #{friday_expenses} | #{friday_profit}
-|saturday  | #{saturday_revenue}  | #{saturday_expenses} | #{saturday_profit}
-|sunday    | #{sunday_revenue}  | #{sunday_expenses} | #{sunday_profit}
+|mon \t| $ #{monday_revenue} | $ #{monday_expenses} | $ #{monday_profit}
+|tue \t| $ #{tuesday_revenue} | $ #{tuesday_expenses} | $ #{tuesday_profit}
+|wed \t| $ #{wednesday_revenue} | $ #{wednesday_expenses} | $ #{wednesday_profit}
+|thu \t| $ #{thursday_revenue} | $ #{thursday_expenses} | $ #{thursday_profit}
+|fri \t| $ #{friday_revenue} | $ #{friday_expenses} | $ #{friday_profit}
+|sat \t| $ #{saturday_revenue} | $ #{saturday_expenses} | $ #{saturday_profit}
+|sun \t| $ #{sunday_revenue} | $ #{sunday_expenses} | $ #{sunday_profit}
+|_____________________________________________|
+|tot\t| $ #{total_revenue} | $ #{total_expenses} | $ #{total_profit}
+|_____________________________________________|
+|avg\t| #{avg_revenue} | #{avg_expenses} | #{avg_profit}
+
 """
 
 puts table
-
-### i dont understand this formatter
-
-#### table1 = "% {days\n}, {revenue\n}, {expenses\n}"
-
-#### puts table1 % {days: "Monday, Tuesday", revenue: 21, expenses: 6}
