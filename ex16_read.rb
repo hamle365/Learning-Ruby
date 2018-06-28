@@ -8,6 +8,6 @@ $stdin.gets
 
 puts "Reading the file..."
 
-target = filename.read
+target = open(filename)
 
-print target
+print target.read
