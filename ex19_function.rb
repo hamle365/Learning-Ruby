@@ -47,4 +47,16 @@ matt_is_cool(
 	"#{total_cool_points} cool points and keeps gaining"
 )
 
+matt_total_points = extra_points + 200
+
+puts "How many cool points should I give Matt?"
+
+more_points = $stdin.gets.chomp.to_i
+
+puts "It looks like you gave him #{more_points} points."
+
+matt_cool_total = (matt_total_points + more_points)
+
+puts "Now Matt has #{matt_cool_total} points."
+
 puts "Does this even work? This is the worst program I have ever seen."
