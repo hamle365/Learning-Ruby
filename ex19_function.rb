@@ -41,4 +41,10 @@ extra_points = total_cool_points + 100
 
 matt_is_cool("way too many", matt_future_job, extra_points + 200)
 
+matt_is_cool(
+	"almost #{matt_future_age}",
+	"hopeful #{matt_future_job}",
+	"#{total_cool_points} cool points and keeps gaining"
+)
+
 puts "Does this even work? This is the worst program I have ever seen."
