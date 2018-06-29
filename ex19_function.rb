@@ -1,8 +1,10 @@
 def matt_is_cool(age, job, cool_points)
+
 	puts "Matt is #{age} years old!"
 	puts "Matt is a #{job} for his job!"
 	puts "Matt has #{cool_points} cool points."
 	puts "He sounds like a pretty cool guy."
+
 end
 
 puts "Let's try doing it directly."
