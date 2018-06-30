@@ -1,16 +1,14 @@
-original_bottle_count = 99
+def start_song
 
-def start_song(original_bottle_count)
-
-  puts "#{original_bottle_count} bottles of beer on the wall, #{original_bottle_count} bottles of beer"
+  puts "99 bottles of beer on the wall, 99 bottles of beer"
 
 end
 
-start_song(original_bottle_count)
+start_song
 
-def sing(original_bottle_count)
+def sing(bottles)
 
-  new_bottles = original_bottle_count - 1
+  new_bottles = bottles - 1
 
   puts "take one down, pass it around, #{new_bottles} bottles of beer on the wall."
 
@@ -22,4 +20,4 @@ def sing(original_bottle_count)
 
 end
 
-sing(original_bottle_count)
+sing(99)
