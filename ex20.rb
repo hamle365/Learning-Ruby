@@ -1,9 +1,14 @@
+# creates a variable as the command line argument
 input_file = ARGV.first
 
+# creates a method called "print all" that takes the variable 'f'
 def print_all(f)
+	# calls the read method on the file and prints the contents
 	puts f.read
+	#ends the method
 end
 
+# creates a method called
 def rewind(f)
 	f.seek(0)
 end
@@ -27,8 +32,8 @@ puts "Let's print three lines:"
 current_line = 1
 print_a_line(current_line, current_file)
 
-current_line = current_line + 1
+current_line += 1
 print_a_line(current_line, current_file)
 
-current_line = current_line + 1
+current_line += 1
 print_a_line(current_line, current_file)
