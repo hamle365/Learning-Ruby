@@ -33,3 +33,14 @@ puts "Here is a puzzle."
 what = add(age, subtract(height, multiply(weight, divide(iq, 2))))
 
 puts "That becomes: #{what}. Can you do it by hand?"
+
+puts "Now I will try my own math."
+
+years_in_berlin = add(0.5, 0.5)
+countries = subtract(10, 1)
+miles = multiply(10, 4000)
+time = divide(10, 2)
+
+puts "I have lived #{years_in_berlin} years in Berlin. I would like to visit #{countries} more countries."
+
+puts "So far I have travelled #{miles} miles in #{time} years."
