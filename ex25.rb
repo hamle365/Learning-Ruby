@@ -11,6 +11,12 @@ module Ex25
 		return words.sort
 	end
 
+	# Prints the first word after popping it off.
+	def Ex25.print_first_word(words)
+		word = words.shift
+		puts word
+	end
+
 	# Prints the last word after popping it off.
 	def Ex25.print_last_word(words)
 		word = words.pop
