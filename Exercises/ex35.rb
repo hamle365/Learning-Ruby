@@ -4,20 +4,11 @@ def gold_room
 	print "> "
 	choice = $stdin.gets.chomp
 
-	# this line has a bug, so fix it
-	# the line originally said if choice.include? ("O") || choice.include("1")
-	# I am not sure if what I changed it to actually does the same thing
-	# I didn't understand the syntax error message
-	# I tried removing the brackets, and also tried writing the number as an integer rather than a string
-	# I need some help understanding what was wrong with the line of code
-	
-	if choice.include? "0"
-		how_much = choice.to_i
-	elsif choice.include? "1"
-		how_much = choice.to_i
-	else
-		dead("Man, learn to type a number.")
-	end
+	how_much = choice.to_i
+
+	if how_much == 0
+    dead("Man, learn to type a number.")
+  end
 
 	if how_much < 50
 		puts "Nice, you're not greedy, you win!"
