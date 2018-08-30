@@ -8,13 +8,13 @@ def start
   print "> "
   choice = $stdin.gets.chomp
 
-  if choice.include? == "car"
+  if choice == "car"
     car_trip
-  elsif choice.include? == "bike"
+  elsif choice == "bike"
     bike_trip
-  elsif choice.incude? == "train"
+  elsif choice == "train"
     train_trip
-  elsif choice.include? == "scooter"
+  elsif choice == "scooter"
     scooter_trip
   else
     puts "I guess you don't want to see your friend that badly!"
@@ -34,16 +34,16 @@ def bike_trip
   print "> "
   bike_choice = $stdin.gets.chomp
 
-  if bike_choice.include? == "road"
+  if bike_choice == "road"
     puts "You start slowly biking on the road."
-    puts "Suddenly, a car rushes by you and you get hit"
+    puts "Suddenly, a car rushes by you and you get hit."
     puts "You die a gruesome death."
     exit(0)
-  elsif bike_choice.include? == "park"
+  elsif bike_choice == "park"
     puts "You have a lovely ride and make it to the cafe to see your friend."
     puts "Good job!"
   else
-    "You veer wildly, unable to choose, and crash into a bush."
+    puts "You veer wildly, unable to choose, and crash into a bush."
     exit(0)
   end
 end
@@ -53,13 +53,40 @@ def train_trip
   puts "How much do you want to pay for your ticket?"
 
   print "> "
-  fare = $stdin.gets.chomp
+  pay = $stdin.gets.chomp
+
+  fare = pay.to_i
 
   if fare == 0
     puts "You get on the train without a ticket."
     puts "U-Bahn controllers come and kick you off, fining you 60 euros."
-    exit(0)
-  elsif fare == > 1
+    puts "Do you want to pay for a ticket this time?"
+
+    print "> "
+    again = $stdin.gets.chomp
+
+    if again == "yes"
+      train_trip
+    elsif again == "no"
+      puts "Fine, do you want to get a scooter share instead?"
+
+      print "> "
+      scooter = $stdin.gets.chomp
+
+      if scooter == "yes"
+        scooter_trip
+      elsif scooter == "no"
+        puts "Ok I guess you don't see your friend!"
+      else
+        puts "Wow you really don't know how to get around."
+        exit(0)
+      end
+    else
+      puts "Wow, you really don't know how to get around."
+      exit(0)
+    end
+
+  elsif fare > 1
     puts "You pay for your ticket and get on the train"
     train_journey
   else
@@ -74,12 +101,12 @@ def train_journey
   print "> "
   train_choice = $stdin.gets.chomp
 
-  if train_choice.include? == "drunk guy"
+  if train_choice == "drunk guy"
     puts "You sit next to the drunk guy and he starts talking about Berghain."
     puts "You are thoroughly convinced by his party attitude."
     puts "You decide to go with him and skip seeing your friend."
     exit(0)
-  elsif train_choice.include? == "rail"
+  elsif train_choice == "rail"
     puts "You hold onto the U-Bahn rail and catch a horrible cold."
     puts "You make it to see your friend but you are sick for weeks."
   else
