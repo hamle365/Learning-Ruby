@@ -8,13 +8,13 @@ def start
   print "> "
   choice = $stdin.gets.chomp
 
-  if choice = car
+  if choice.include? == "car"
     car_trip
-  elsif choice = bike
+  elsif choice.include? == "bike"
     bike_trip
-  elsif choice = train
+  elsif choice.incude? == "train"
     train_trip
-  elsif choice = scooter
+  elsif choice.include? == "scooter"
     scooter_trip
   else
     puts "I guess you don't want to see your friend that badly!"
@@ -34,12 +34,12 @@ def bike_trip
   print "> "
   bike_choice = $stdin.gets.chomp
 
-  if bike_choice = road
+  if bike_choice.include? == "road"
     puts "You start slowly biking on the road."
     puts "Suddenly, a car rushes by you and you get hit"
     puts "You die a gruesome death."
     exit(0)
-  elsif bike_choice = park
+  elsif bike_choice.include? == "park"
     puts "You have a lovely ride and make it to the cafe to see your friend."
     puts "Good job!"
   else
@@ -50,17 +50,36 @@ end
 
 def train_trip
   puts "You walk to the train station and get on the U-Bahn"
+  puts "How much do you want to pay for your ticket?"
+
+  print "> "
+  fare = $stdin.gets.chomp
+
+  if fare == 0
+    puts "You get on the train without a ticket."
+    puts "U-Bahn controllers come and kick you off, fining you 60 euros."
+    exit(0)
+  elsif fare == > 1
+    puts "You pay for your ticket and get on the train"
+    train_journey
+  else
+    puts "Do you even know how to buy a ticket?"
+    exit(0)
+  end
+end
+
+def train_journey
   puts "Do you want to sit next to a drunk guy, or hold onto the rail?"
 
   print "> "
   train_choice = $stdin.gets.chomp
 
-  if train_choice = drunk guy
+  if train_choice.include? == "drunk guy"
     puts "You sit next to the drunk guy and he starts talking about Berghain."
     puts "You are thoroughly convinced by his party attitude."
     puts "You decide to go with him and skip seeing your friend."
     exit(0)
-  elsif train_choice = rail
+  elsif train_choice.include? == "rail"
     puts "You hold onto the U-Bahn rail and catch a horrible cold."
     puts "You make it to see your friend but you are sick for weeks."
   else
