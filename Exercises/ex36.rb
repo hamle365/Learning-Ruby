@@ -58,39 +58,48 @@ def train_trip
   fare = pay.to_i
 
   if fare == 0
-    puts "You get on the train without a ticket."
-    puts "U-Bahn controllers come and kick you off, fining you 60 euros."
-    puts "Do you want to pay for a ticket this time?"
-
-    print "> "
-    again = $stdin.gets.chomp
-
-    if again == "yes"
-      train_trip
-    elsif again == "no"
-      puts "Fine, do you want to get a scooter share instead?"
-
-      print "> "
-      scooter = $stdin.gets.chomp
-
-      if scooter == "yes"
-        scooter_trip
-      elsif scooter == "no"
-        puts "Ok I guess you don't see your friend!"
-      else
-        puts "Wow you really don't know how to get around."
-        exit(0)
-      end
-    else
-      puts "Wow, you really don't know how to get around."
-      exit(0)
-    end
+    train_trip_no_ticket
 
   elsif fare > 1
     puts "You pay for your ticket and get on the train"
     train_journey
+
   else
     puts "Do you even know how to buy a ticket?"
+    exit(0)
+  end
+end
+
+def train_trip_no_ticket
+  puts "You get on the train without a ticket."
+  puts "U-Bahn controllers come and kick you off, fining you 60 euros."
+  puts "Do you want to pay for a ticket this time?"
+
+  print "> "
+  again = $stdin.gets.chomp
+
+  if again == "yes"
+    train_trip
+  elsif again == "no"
+    scooter_option
+  else
+    puts "Wow, you really don't know how to get around."
+    exit(0)
+  end
+end
+
+def scooter_option
+  puts "Fine, do you want to get a scooter share instead?"
+
+  print "> "
+  scooter = $stdin.gets.chomp
+
+  if scooter == "yes"
+    scooter_trip
+  elsif scooter == "no"
+    puts "Ok I guess you don't see your friend!"
+  else
+    puts "Wow you really don't know how to get around."
     exit(0)
   end
 end
@@ -116,8 +125,23 @@ def train_journey
 end
 
 def scooter_trip
-  puts "You go outside and start downloading a scooter-sharing app"
-  puts ""
+  puts "You go outside and start downloading a scooter-sharing app."
+  puts "You find a scooter nearby and start scootering to your friend."
+  puts "Do you want to scooter on the road or footpath?"
+
+  print "> "
+  scooter_choice = $stdin.gets.chomp
+
+  if scooter_choice == "road"
+    puts "You hop your scooter onto the road and get hit by a car. You die."
+    exit(0)
+  elsif scooter_choice == "footpath"
+    puts "You scooter on the footpath and slowly but surely make it to the cafe."
+    puts "You have a nice coffee date with your friend, good job!"
+  else
+    puts "You don't know how to ride the scooter properly and you crash into a wall."
+    exit(0)
+  end
 end
 
 start
